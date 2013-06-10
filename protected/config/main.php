@@ -7,7 +7,10 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'Primera Aplicación',
+        'language' => 'es',
+        'sourceLanguage' => 'en',
+        'charset' => 'utf-8',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
