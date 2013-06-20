@@ -8,7 +8,9 @@ echo "<h1>Hello</h1>";
 
 
 ?>
-
+<br>
+<div> <?php echo CHtml::link('Crear nueva', array('add')); ?></div>  
+<br>
 <table>
 	<tr>
 	<th>ID</th>
