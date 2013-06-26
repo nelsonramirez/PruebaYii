@@ -28,16 +28,14 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('genero')); ?>:</b>
 	<?php echo CHtml::encode($data->genero); ?>
 	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('folio_id')); ?>:</b>
-	<?php echo CHtml::encode($data->folio_id); ?>
+        
+        <b><?php echo CHtml::encode($data->getAttributeLabel('genero')); ?>:</b>
+	<?php echo CHtml::encode($data->folios?$data->folios->lugar:'No hay folios'); ?>
 	<br />
 
-	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('ciudad_id')); ?>:</b>
-	<?php echo CHtml::encode($data->city->nombre); ?>
+	<?php echo CHtml::encode($data->ciudad->nombre); ?>
 	<br />
 
-	
 
 </div>

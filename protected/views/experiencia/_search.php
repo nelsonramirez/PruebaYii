@@ -1,6 +1,6 @@
 <?php
-/* @var $this FolioController */
-/* @var $model Folio */
+/* @var $this ExperienciaController */
+/* @var $model Experiencia */
 /* @var $form CActiveForm */
 ?>
 
@@ -17,28 +17,23 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'lugar'); ?>
-		<?php echo $form->textField($model,'lugar',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'Empresa'); ?>
+		<?php echo $form->textField($model,'Empresa',array('size'=>60,'maxlength'=>64)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'psicologica'); ?>
-		<?php echo $form->textField($model,'psicologica'); ?>
+		<?php echo $form->label($model,'Inicio'); ?>
+		<?php echo $form->textField($model,'Inicio'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'tecnica'); ?>
-		<?php echo $form->textField($model,'tecnica'); ?>
+		<?php echo $form->label($model,'Finalizacion'); ?>
+		<?php echo $form->textField($model,'Finalizacion'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'entrevista'); ?>
-		<?php echo $form->textField($model,'entrevista'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'puntaje'); ?>
-		<?php echo $form->textField($model,'puntaje'); ?>
+		<?php echo $form->label($model,'Jefe'); ?>
+		<?php echo $form->textField($model,'Jefe',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">

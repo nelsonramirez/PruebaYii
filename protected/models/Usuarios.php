@@ -10,14 +10,13 @@
  * @property string $email
  * @property integer $estado
  * @property string $genero
- * @property integer $folio_id
  * @property integer $ciudad_id
  *
  * The followings are the available model relations:
  * @property Estudios[] $estudioses
  * @property Experiencia[] $experiencias
- * @property Folio $folio
- * @property Ciudad $city
+ * @property Folio[] $folios
+ * @property Ciudades $ciudad
  */
 class Usuarios extends CActiveRecord
 {
@@ -47,14 +46,14 @@ class Usuarios extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, telefono, estado, genero, folio_id, ciudad_id', 'required'),
-			array('telefono, estado, folio_id, ciudad_id', 'numerical', 'integerOnly'=>true),
+			array('nombre, telefono, estado, genero, ciudad_id', 'required'),
+			array('telefono, estado, ciudad_id', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>60),
 			array('email', 'length', 'max'=>45),
 			array('genero', 'length', 'max'=>1),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nombre, telefono, email, estado, genero, folio_id, ciudad_id', 'safe', 'on'=>'search'),
+			array('id, nombre, telefono, email, estado, genero, ciudad_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,8 +67,8 @@ class Usuarios extends CActiveRecord
 		return array(
 			'estudioses' => array(self::HAS_MANY, 'Estudios', 'usuarios_id'),
 			'experiencias' => array(self::HAS_MANY, 'Experiencia', 'usuarios_id'),
-			'folio' => array(self::BELONGS_TO, 'Folio', 'folio_id'),
-			'city' => array(self::BELONGS_TO, 'Ciudad', 'ciudad_id'),
+			'folios' => array(self::HAS_MANY, 'Folio', 'usuarios_id'),
+			'ciudad' => array(self::BELONGS_TO, 'Ciudades', 'ciudad_id'),
 		);
 	}
 
@@ -85,8 +84,7 @@ class Usuarios extends CActiveRecord
 			'email' => 'Email',
 			'estado' => 'Estado',
 			'genero' => 'Genero',
-			'folio_id' => 'Folio',
-			'ciudad_id' => 'Ciudad de Origen',
+			'ciudad_id' => 'Ciudad',
 		);
 	}
 
@@ -107,7 +105,6 @@ class Usuarios extends CActiveRecord
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('estado',$this->estado);
 		$criteria->compare('genero',$this->genero,true);
-		$criteria->compare('folio_id',$this->folio_id);
 		$criteria->compare('ciudad_id',$this->ciudad_id);
 
 		return new CActiveDataProvider($this, array(

@@ -1,6 +1,6 @@
 <?php
-/* @var $this CiudadController */
-/* @var $model Ciudad */
+/* @var $this CiudadesController */
+/* @var $model Ciudades */
 /* @var $form CActiveForm */
 ?>
 

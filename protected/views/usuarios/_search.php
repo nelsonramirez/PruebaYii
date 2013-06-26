@@ -42,11 +42,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'folio_id'); ?>
-		<?php echo $form->textField($model,'folio_id'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'ciudad_id'); ?>
 		<?php echo $form->textField($model,'ciudad_id'); ?>
 	</div>

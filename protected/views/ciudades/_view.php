@@ -1,6 +1,6 @@
 <?php
-/* @var $this CiudadController */
-/* @var $data Ciudad */
+/* @var $this CiudadesController */
+/* @var $data Ciudades */
 ?>
 
 <div class="view">

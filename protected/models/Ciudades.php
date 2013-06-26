@@ -1,21 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "ciudad".
+ * This is the model class for table "ciudades".
  *
- * The followings are the available columns in table 'ciudad':
+ * The followings are the available columns in table 'ciudades':
  * @property integer $id
  * @property string $nombre
  *
  * The followings are the available model relations:
  * @property Usuarios[] $usuarioses
  */
-class Ciudad extends CActiveRecord
+class Ciudades extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Ciudad the static model class
+	 * @return Ciudades the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -27,7 +27,7 @@ class Ciudad extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'ciudad';
+		return 'ciudades';
 	}
 
 	/**
@@ -38,8 +38,7 @@ class Ciudad extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, nombre', 'required'),
-			array('id', 'numerical', 'integerOnly'=>true),
+			array('nombre', 'required'),
 			array('nombre', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.

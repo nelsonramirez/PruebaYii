@@ -27,7 +27,6 @@ $this->menu=array(
 		'email',
 		'estado',
 		'genero',
-		'folio_id',
 		'ciudad_id',
 	),
 )); ?>

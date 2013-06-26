@@ -27,5 +27,6 @@ $this->menu=array(
 		'tecnica',
 		'entrevista',
 		'puntaje',
+		'usuarios_id',
 	),
 )); ?>

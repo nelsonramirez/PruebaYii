@@ -29,5 +29,9 @@
 	<?php echo CHtml::encode($data->puntaje); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('usuarios_id')); ?>:</b>
+	<?php echo CHtml::encode($data->usuarios_id); ?>
+	<br />
+
 
 </div>

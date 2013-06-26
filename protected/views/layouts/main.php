@@ -30,9 +30,11 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
-                                array('label'=>'Saludo', 'url'=>array('/saludo/index')),
-                                array('label'=>'Tareas', 'url'=>array('/tareas/index')),
-                                array('label'=>'Ciudades', 'url'=>array('/ciudad/index')),
+                                array('label'=>'Usuarios', 'url'=>array('/usuarios/index')),                                
+                                array('label'=>'Ciudades', 'url'=>array('/ciudades/index')),
+                                array('label'=>'Experiencias', 'url'=>array('/experiencia/index')),
+                                array('label'=>'Estudios', 'url'=>array('/estudios/index')),
+                                array('label'=>'Folio', 'url'=>array('/folio/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),

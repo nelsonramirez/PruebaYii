@@ -10,9 +10,10 @@
  * @property integer $tecnica
  * @property integer $entrevista
  * @property integer $puntaje
+ * @property integer $usuarios_id
  *
  * The followings are the available model relations:
- * @property Usuarios[] $usuarioses
+ * @property Usuarios $usuarios
  */
 class Folio extends CActiveRecord
 {
@@ -42,12 +43,12 @@ class Folio extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('lugar', 'required'),
-			array('psicologica, tecnica, entrevista, puntaje', 'numerical', 'integerOnly'=>true),
+			array('lugar, usuarios_id', 'required'),
+			array('psicologica, tecnica, entrevista, puntaje, usuarios_id', 'numerical', 'integerOnly'=>true),
 			array('lugar', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, lugar, psicologica, tecnica, entrevista, puntaje', 'safe', 'on'=>'search'),
+			array('id, lugar, psicologica, tecnica, entrevista, puntaje, usuarios_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,7 +60,7 @@ class Folio extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'usuarioses' => array(self::HAS_MANY, 'Usuarios', 'folio_id'),
+			'usuarios' => array(self::BELONGS_TO, 'Usuarios', 'usuarios_id'),
 		);
 	}
 
@@ -75,6 +76,7 @@ class Folio extends CActiveRecord
 			'tecnica' => 'Tecnica',
 			'entrevista' => 'Entrevista',
 			'puntaje' => 'Puntaje',
+			'usuarios_id' => 'Usuarios',
 		);
 	}
 
@@ -95,6 +97,7 @@ class Folio extends CActiveRecord
 		$criteria->compare('tecnica',$this->tecnica);
 		$criteria->compare('entrevista',$this->entrevista);
 		$criteria->compare('puntaje',$this->puntaje);
+		$criteria->compare('usuarios_id',$this->usuarios_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

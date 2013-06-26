@@ -46,12 +46,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'folio_id'); ?>
-		<?php echo $form->textField($model,'folio_id'); ?>
-		<?php echo $form->error($model,'folio_id'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'ciudad_id'); ?>
 		<?php echo $form->textField($model,'ciudad_id'); ?>
 		<?php echo $form->error($model,'ciudad_id'); ?>

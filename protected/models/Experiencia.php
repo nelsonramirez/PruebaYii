@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'experiencia':
  * @property integer $id
- * @property integer $Empresa
+ * @property string $Empresa
  * @property string $Inicio
  * @property string $Finalizacion
  * @property string $Jefe
@@ -43,7 +43,8 @@ class Experiencia extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('Empresa, Inicio, Finalizacion, Jefe, usuarios_id', 'required'),
-			array('Empresa, usuarios_id', 'numerical', 'integerOnly'=>true),
+			array('usuarios_id', 'numerical', 'integerOnly'=>true),
+			array('Empresa', 'length', 'max'=>64),
 			array('Jefe', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -90,7 +91,7 @@ class Experiencia extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('Empresa',$this->Empresa);
+		$criteria->compare('Empresa',$this->Empresa,true);
 		$criteria->compare('Inicio',$this->Inicio,true);
 		$criteria->compare('Finalizacion',$this->Finalizacion,true);
 		$criteria->compare('Jefe',$this->Jefe,true);
