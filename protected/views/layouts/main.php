@@ -14,8 +14,12 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+        
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/styles.css" />
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+        
+        
 </head>
 
 <body>
@@ -32,14 +36,18 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
                                 array('label'=>'Saludo', 'url'=>array('/saludo/index')),
                                 array('label'=>'Tareas', 'url'=>array('/tareas/index')),
-                                array('label'=>'Ciudades', 'url'=>array('/ciudad/index')),
-
+                                array('label'=>'Folios', 'url'=>array('/folio/index')),
+                                array('label'=>'Usuarios', 'url'=>array('/usuarios/index')),
+                                array('label'=>'Experiencias', 'url'=>array('/experiencia/index')),
+                                array('label'=>'Ciudades', 'url'=>array('/ciudades/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
+            
+            
 	</div><!-- mainmenu -->
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -52,7 +60,7 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> por Nelson Ramírez.<br/>
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
