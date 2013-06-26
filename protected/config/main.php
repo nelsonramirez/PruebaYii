@@ -3,14 +3,14 @@
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 
+ Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
+
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Primera Aplicación',
-        'language' => 'es',
-        'sourceLanguage' => 'en',
-        'charset' => 'utf-8',
+	'name'=>'Mi aplicación',
+        'theme' => 'classic',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -19,6 +19,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+                'ext.AweCrud.components.*',
 	),
 
 	'modules'=>array(
@@ -29,6 +30,9 @@ return array(
 			'password'=>'123456',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
+                        'generatorPaths' => array(
+                            'ext.AweCrud.generators',
+                        ),
 		),
 		
 	),
@@ -43,8 +47,6 @@ return array(
 		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
-                        'showScriptName' => false,  
-                        'urlSuffix' => '.htm',
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
@@ -85,6 +87,14 @@ return array(
 				*/
 			),
 		),
+                'bootstrap'=>array(
+                    'class'=>'bootstrap.components.Bootstrap',
+                ),
+                'messages' => array(
+                   'extensionPaths' => array(
+                       'AweCrud' => 'ext.AweCrud.messages', // AweCrud messages directory.
+                   ),
+                ),
 	),
 
 	// application-level parameters that can be accessed

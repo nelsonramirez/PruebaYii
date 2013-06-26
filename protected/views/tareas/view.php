@@ -1,9 +1,0 @@
-<h1>Detalle de la tarea</h1>
-<b>ID: </b>
-<?php echo $model->id?><br>
-<b>Nombre: </b>
-<?php echo $model->nombre?><br>
-<b>Descripción: </b>
-<?php echo $model->descripcion?><br>
-<?php echo CHtml::link("Atras", array ('index'))?><br>
-
