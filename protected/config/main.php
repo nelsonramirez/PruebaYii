@@ -10,7 +10,10 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Mi aplicación',
-        'theme' => 'classic',
+        'theme' => 'bootstrap',//'bootstrap',
+        'language' => 'es',
+        'charset' => 'utf-8',
+        'sourceLanguage' => 'en',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
