@@ -15,11 +15,12 @@
 
     <?php echo $form->errorSummary($model) ?>
 
-                            <?php echo $form->textFieldRow($model, 'nombre', array('class' => 'span5', 'maxlength' => 60)) ?>
+                        <?php echo $form->textFieldRow($model, 'nombre', array('class' => 'span5', 'maxlength' => 60)) ?>
                         <?php echo $form->textFieldRow($model, 'telefono', array('class' => 'span5')) ?>
                         <?php echo $form->textFieldRow($model, 'email', array('class' => 'span5', 'maxlength' => 45)) ?>
                         <?php echo $form->checkBoxRow($model, 'estado') ?>
-                        <?php echo $form->textFieldRow($model, 'genero', array('class' => 'span5', 'maxlength' => 1)) ?>
+                        <?php /* echo $form->textFieldRow($model, 'genero', array('class' => 'span5', 'maxlength' => 1)) */?>
+                        <?php echo $form->dropDownListRow($model, 'genero', Usuarios::getGeneros()) ?>
                         <?php echo $form->dropDownListRow($model, 'ciudad_id', CHtml::listData(Ciudades::model()->findAll(), 'id', Ciudades::representingColumn())) ?>
                 <div class="form-actions">
                 <?php $this->widget('bootstrap.widgets.TbButton', array(

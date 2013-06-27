@@ -20,6 +20,10 @@
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(
                 array('label'=>'Home', 'url'=>array('/site/index')),
+                array('label'=>'Folios', 'url'=>array('/folios/index')),
+                array('label'=>'Usuarios', 'url'=>array('/usuarios/index')),
+                array('label'=>'Experiencias', 'url'=>array('/experiencias/index')),
+                array('label'=>'Ciudades', 'url'=>array('/ciudades/index')),
                 array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
                 array('label'=>'Contact', 'url'=>array('/site/contact')),
                 array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),

@@ -10,13 +10,17 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Mi aplicación',
-        'theme' => 'bootstrap',//'bootstrap',
+        'theme' => 'classic',//'bootstrap',
         'language' => 'es',
         'charset' => 'utf-8',
         'sourceLanguage' => 'en',
 
 	// preloading 'log' component
-	'preload'=>array('log'),
+	'preload'=>array(
+            'log',
+            'bootstrap',
+            
+            ),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -34,6 +38,7 @@ return array(
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
                         'generatorPaths' => array(
+                            'bootstrap.gii',
                             'ext.AweCrud.generators',
                         ),
 		),
